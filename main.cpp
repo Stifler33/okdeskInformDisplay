@@ -8,8 +8,8 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);    
     setParameterAccount setWindow;
     setWindow.show();
-    QTimer::singleShot(2000, &setWindow, SLOT(close()));
-    InformDisplay w;
-    w.show();
+
+    //InformDisplay w;
+    //w.show();
     return a.exec();
 }
