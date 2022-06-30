@@ -2,7 +2,7 @@
 #define SETPARAMETERACCOUNT_H
 
 #include <QWidget>
-
+#include "okdeskapi.h"
 namespace Ui {
 class setParameterAccount;
 }
@@ -14,9 +14,14 @@ class setParameterAccount : public QWidget
 public:
     explicit setParameterAccount(QWidget *parent = nullptr);
     ~setParameterAccount();
-
+public slots:
+    void getParameters();
+    void showResultConnect(QString &result);
+signals:
+    void callConnect(QString name, QString api);
 private:
     Ui::setParameterAccount *ui;
+    OkdeskApi *okdeskApi;
 };
 
 #endif // SETPARAMETERACCOUNT_H

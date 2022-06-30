@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QTextEdit" name="textEdit">
+  <widget class="QTextEdit" name="api">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -35,6 +35,7 @@
    <property name="font">
     <font>
      <pointsize>14</pointsize>
+     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -54,6 +55,7 @@
    <property name="font">
     <font>
      <pointsize>14</pointsize>
+     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -61,7 +63,7 @@
     <string>Имя аккаунта :</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit_2">
+  <widget class="QTextEdit" name="name">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -71,7 +73,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="buttonConnect">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -83,11 +85,25 @@
    <property name="font">
     <font>
      <pointsize>14</pointsize>
+     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
    <property name="text">
     <string>Подключить</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="resultConnect">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>230</y>
+     <width>281</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>
