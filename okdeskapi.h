@@ -12,8 +12,8 @@
 class OkdeskApi : public QObject
 {
     Q_OBJECT
-QString apiToken;
-QString nameAccount;
+QString accountApi;
+QString accountName;
 QString url = "https://%1.okdesk.ru/api/v1/%2/?api_token=%3";
 QNetworkAccessManager netManager;
 QJsonDocument jsonDoc;
@@ -29,7 +29,7 @@ void newTaskArrived(const QJsonObject &task);
 void listAllTask(const QJsonArray &arrayTask);
 
 public slots:
-void setAccountSettings(QString &nameAccount, QString &apiAccount);
+void setAccountSettings(QString &name, QString &api);
 void getResponse(QNetworkReply *replyNetwork);
 };
 
