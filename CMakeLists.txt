@@ -20,7 +20,9 @@ set(PROJECT_SOURCES
         informdisplay.h
 
         informdisplay.ui
-        setparameteraccount.h setparameteraccount.cpp setparameteraccount.ui
+        setparameteraccount.h
+        setparameteraccount.cpp
+        setparameteraccount.ui
 
         okdeskapi.h
         okdeskapi.cpp
