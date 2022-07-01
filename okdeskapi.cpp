@@ -1,6 +1,6 @@
 #include "okdeskapi.h"
 
-OkdeskApi::OkdeskApi(QObject *parent) : QObject(parent)
+OkdeskApi::OkdeskApi()
 {
     connect(&netManager, &QNetworkAccessManager::finished, this, &OkdeskApi::getResponse);
     //getAllTask.setUrl(QUrl(url.arg(accountName).arg(command.getAllTask).arg(accountApi)));

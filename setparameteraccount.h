@@ -12,7 +12,7 @@ class setParameterAccount : public QWidget
     Q_OBJECT
 
 public:
-    explicit setParameterAccount(QWidget *parent = nullptr);
+    setParameterAccount();
     ~setParameterAccount();
 public slots:
     void getParameters();

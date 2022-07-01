@@ -1,15 +1,12 @@
 #include "setparameteraccount.h"
 #include "ui_setparameteraccount.h"
 
-setParameterAccount::setParameterAccount(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::setParameterAccount)
+setParameterAccount::setParameterAccount() : ui(new Ui::setParameterAccount)
 {
     ui->setupUi(this);   
-    okdeskApi = new OkdeskApi(this);
-    connect(ui->buttonConnect, &QPushButton::clicked, this, &setParameterAccount::getParameters);
-    connect(this, &setParameterAccount::callConnect, okdeskApi, &OkdeskApi::setAccountSettings);
-    connect(okdeskApi, &OkdeskApi::sendResultConnect, this, &setParameterAccount::showResultConnect);
+    //connect(ui->buttonConnect, &QPushButton::clicked, this, &setParameterAccount::getParameters);
+    //connect(this, &setParameterAccount::callConnect, okdeskApi, &OkdeskApi::setAccountSettings);
+    //connect(okdeskApi, &OkdeskApi::sendResultConnect, this, &setParameterAccount::showResultConnect);
 }
 
 setParameterAccount::~setParameterAccount()

@@ -25,7 +25,8 @@ struct commandApi{
 };
 commandApi command;
 public:
-    explicit OkdeskApi(QObject *parent = nullptr);
+    //explicit OkdeskApi(QObject *parent = nullptr);
+    OkdeskApi();
 
 signals:
 void newTaskArrived(const QJsonObject &task);

@@ -16,6 +16,8 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets Network Core REQUIRED)
 
 set(PROJECT_SOURCES
         main.cpp
+        general.h
+        general.cpp
         informdisplay.cpp
         informdisplay.h
 
