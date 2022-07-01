@@ -4,7 +4,7 @@
 setParameterAccount::setParameterAccount() : ui(new Ui::setParameterAccount)
 {
     ui->setupUi(this);   
-    //connect(ui->buttonConnect, &QPushButton::clicked, this, &setParameterAccount::getParameters);
+    connect(ui->buttonConnect, &QPushButton::clicked, this, &setParameterAccount::getParameters);
     //connect(this, &setParameterAccount::callConnect, okdeskApi, &OkdeskApi::setAccountSettings);
     //connect(okdeskApi, &OkdeskApi::sendResultConnect, this, &setParameterAccount::showResultConnect);
 }
@@ -12,7 +12,7 @@ setParameterAccount::setParameterAccount() : ui(new Ui::setParameterAccount)
 setParameterAccount::~setParameterAccount()
 {
     delete ui;
-    delete okdeskApi;
+    //delete okdeskApi;
 }
 
 void setParameterAccount::getParameters()

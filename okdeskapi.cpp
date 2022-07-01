@@ -11,7 +11,7 @@ void OkdeskApi::setAccountSettings(QString name, QString api)
     accountName = name;
     accountApi = api;
     getHelpStatusTask.setUrl(QUrl(url.arg(accountName).arg(command.getHelpStatusesTask).arg(accountApi)));
-    netManager.get(getHelpStatusTask);
+    emit signalSend();
 }
 
 void OkdeskApi::getResponse(QNetworkReply *replyNetwork)
@@ -23,4 +23,9 @@ void OkdeskApi::getResponse(QNetworkReply *replyNetwork)
         emit sendResultConnect(replyNetwork->errorString());
 
     }
+}
+
+void OkdeskApi::sendRequest()
+{
+    netManager.get(getHelpStatusTask);
 }
