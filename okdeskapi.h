@@ -33,7 +33,7 @@ void listAllTask(const QJsonArray &arrayTask);
 void sendResultConnect(QString result);
 
 public slots:
-void setAccountSettings(QString &name, QString &api);
+void setAccountSettings(QString name, QString api);
 void getResponse(QNetworkReply *replyNetwork);
 };
 

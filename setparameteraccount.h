@@ -16,7 +16,7 @@ public:
     ~setParameterAccount();
 public slots:
     void getParameters();
-    void showResultConnect(QString &result);
+    void showResultConnect(QString result);
 signals:
     void callConnect(QString name, QString api);
 private:

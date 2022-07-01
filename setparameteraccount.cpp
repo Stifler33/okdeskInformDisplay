@@ -6,6 +6,7 @@ setParameterAccount::setParameterAccount(QWidget *parent) :
     ui(new Ui::setParameterAccount)
 {
     ui->setupUi(this);   
+    okdeskApi = new OkdeskApi(this);
     connect(ui->buttonConnect, &QPushButton::clicked, this, &setParameterAccount::getParameters);
     connect(this, &setParameterAccount::callConnect, okdeskApi, &OkdeskApi::setAccountSettings);
     connect(okdeskApi, &OkdeskApi::sendResultConnect, this, &setParameterAccount::showResultConnect);
@@ -14,6 +15,7 @@ setParameterAccount::setParameterAccount(QWidget *parent) :
 setParameterAccount::~setParameterAccount()
 {
     delete ui;
+    delete okdeskApi;
 }
 
 void setParameterAccount::getParameters()
@@ -21,7 +23,8 @@ void setParameterAccount::getParameters()
     emit callConnect(ui->name->toPlainText(), ui->api->toPlainText());
 }
 
-void setParameterAccount::showResultConnect(QString &result)
+void setParameterAccount::showResultConnect(QString result)
 {
     ui->resultConnect->setText(result);
 }
+
