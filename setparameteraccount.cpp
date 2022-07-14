@@ -1,8 +1,7 @@
 #include "setparameteraccount.h"
 #include "ui_setparameteraccount.h"
 
-setParameterAccount::setParameterAccount(QWidget *parent) :
-    QWidget(parent),
+setParameterAccount::setParameterAccount(OkdeskApi *_okdeskApi) : okdeskApi(_okdeskApi),
     ui(new Ui::setParameterAccount)
 {
     ui->setupUi(this);   
@@ -21,7 +20,7 @@ void setParameterAccount::getParameters()
     emit callConnect(ui->name->toPlainText(), ui->api->toPlainText());
 }
 
-void setParameterAccount::showResultConnect(QString &result)
+void setParameterAccount::showResultConnect(QString result)
 {
     ui->resultConnect->setText(result);
 }

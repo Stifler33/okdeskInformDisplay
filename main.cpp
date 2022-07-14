@@ -6,7 +6,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);    
-    setParameterAccount setWindow;
+    OkdeskApi okdeskApi;
+    setParameterAccount setWindow(&okdeskApi);
     setWindow.show();
 
     //InformDisplay w;

@@ -12,11 +12,11 @@ class setParameterAccount : public QWidget
     Q_OBJECT
 
 public:
-    explicit setParameterAccount(QWidget *parent = nullptr);
+    setParameterAccount(OkdeskApi *_okdeskApi);
     ~setParameterAccount();
 public slots:
     void getParameters();
-    void showResultConnect(QString &result);
+    void showResultConnect(QString result);
 signals:
     void callConnect(QString name, QString api);
 private:

@@ -24,6 +24,7 @@ struct commandApi{
     QString getHelpStatusesTask = "issues/statuses";
 };
 commandApi command;
+void printJson();
 public:
     explicit OkdeskApi(QObject *parent = nullptr);
 
@@ -33,7 +34,7 @@ void listAllTask(const QJsonArray &arrayTask);
 void sendResultConnect(QString result);
 
 public slots:
-void setAccountSettings(QString &name, QString &api);
+void setAccountSettings(QString name, QString api);
 void getResponse(QNetworkReply *replyNetwork);
 };
 
