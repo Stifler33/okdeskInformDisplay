@@ -8,6 +8,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <iostream>
 
 class OkdeskApi : public QObject
 {
@@ -24,10 +25,9 @@ struct commandApi{
     QString getHelpStatusesTask = "issues/statuses";
 };
 commandApi command;
-void printJson();
 public:
     explicit OkdeskApi(QObject *parent = nullptr);
-
+    ~OkdeskApi() = default;
 signals:
 void newTaskArrived(const QJsonObject &task);
 void listAllTask(const QJsonArray &arrayTask);

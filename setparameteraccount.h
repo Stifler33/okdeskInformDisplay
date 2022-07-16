@@ -19,6 +19,7 @@ public slots:
     void showResultConnect(QString result);
 signals:
     void callConnect(QString name, QString api);
+    void quit();
 private:
     Ui::setParameterAccount *ui;
     OkdeskApi *okdeskApi;

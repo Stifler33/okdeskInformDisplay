@@ -23,4 +23,9 @@ void setParameterAccount::getParameters()
 void setParameterAccount::showResultConnect(QString result)
 {
     ui->resultConnect->setText(result);
+    if (result == "connect completed")
+    {
+        setParameterAccount::close();
+        emit quit();
+    }
 }
