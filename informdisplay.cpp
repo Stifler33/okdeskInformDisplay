@@ -20,6 +20,26 @@ void InformDisplay::setApi(OkdeskApi *_api)
     timer->start();
     connect(timer, &QTimer::timeout, [this](){
        ui->labelTime->setText(QTime::currentTime().toString());
+       emit queryTask();
     });
+    connect(this, &InformDisplay::queryTask, okdeskApi, &OkdeskApi::getNewTask);
+    connect(okdeskApi, &OkdeskApi::sendingTasks, this, &InformDisplay::getTasks);
+}
+
+void InformDisplay::getTasks(QJsonDocument *jDoc)
+{
+    if(jDoc->isArray())
+    {
+        QJsonArray jArray(jDoc->array());
+        if (jArray.begin()->isObject())
+        {
+            QJsonObject jObj = jArray.begin()->toObject();
+            if(jObj.contains("code") && jObj["code"].isString())
+            {
+                std::cout << jObj["code"].toString().toStdString();
+            }
+        }
+
+    }
 }
 

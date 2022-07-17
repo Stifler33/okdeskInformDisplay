@@ -30,13 +30,13 @@ public:
     ~OkdeskApi() = default;
     QString getNameAccount();
 signals:
-void newTaskArrived(const QJsonObject &task);
-void listAllTask(const QJsonArray &arrayTask);
+void sendingTasks(QJsonDocument *tasks);
 void sendResultConnect(QString result);
 
 public slots:
 void setAccountSettings(QString name, QString api);
 void getResponse(QNetworkReply *replyNetwork);
+void getNewTask();
 };
 
 #endif // OKDESKAPI_H

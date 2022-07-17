@@ -5,7 +5,6 @@
 #include <okdeskapi.h>
 #include <QTimer>
 #include <QTime>
-#include <iostream>
 QT_BEGIN_NAMESPACE
 namespace Ui { class InformDisplay; }
 
@@ -19,9 +18,14 @@ public:
     InformDisplay();
     ~InformDisplay();
     void setApi(OkdeskApi *_api);
+public slots:
+    void getTasks(QJsonDocument *jDoc);
 private:
+    QJsonArray tasks;
     QTimer *timer;
     OkdeskApi *okdeskApi;
     Ui::InformDisplay *ui;
+signals:
+    void queryTask();
 };
 #endif // INFORMDISPLAY_H
