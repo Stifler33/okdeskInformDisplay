@@ -1,7 +1,6 @@
 #include "informdisplay.h"
 #include "setparameteraccount.h"
 #include <QApplication>
-#include <QTimer>
 
 int main(int argc, char *argv[])
 {
@@ -10,6 +9,9 @@ int main(int argc, char *argv[])
     setParameterAccount setWindow(&okdeskApi);
     setWindow.show();
     InformDisplay w;
-    QObject::connect(&setWindow, &setParameterAccount::quit, [&w](){w.show();});
+    QObject::connect(&setWindow, &setParameterAccount::quit, [&w](OkdeskApi *_api){
+        w.setApi(_api);
+        w.show();
+    });
     return a.exec();
 }

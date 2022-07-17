@@ -28,6 +28,7 @@ commandApi command;
 public:
     explicit OkdeskApi(QObject *parent = nullptr);
     ~OkdeskApi() = default;
+    QString getNameAccount();
 signals:
 void newTaskArrived(const QJsonObject &task);
 void listAllTask(const QJsonArray &arrayTask);

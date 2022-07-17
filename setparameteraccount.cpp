@@ -17,7 +17,7 @@ setParameterAccount::~setParameterAccount()
 
 void setParameterAccount::getParameters()
 {
-    emit callConnect(ui->name->toPlainText(), ui->api->toPlainText());
+    emit callConnect("itconsalt", "55fbb943003c66a30caaabd803da63408afd531d");
 }
 
 void setParameterAccount::showResultConnect(QString result)
@@ -26,6 +26,6 @@ void setParameterAccount::showResultConnect(QString result)
     if (result == "connect completed")
     {
         setParameterAccount::close();
-        emit quit();
+        emit quit(okdeskApi);
     }
 }

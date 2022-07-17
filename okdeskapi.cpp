@@ -24,3 +24,8 @@ void OkdeskApi::getResponse(QNetworkReply *replyNetwork)
         emit sendResultConnect(replyNetwork->errorString());
     }
 }
+
+QString OkdeskApi::getNameAccount()
+{
+    return accountName;
+}
